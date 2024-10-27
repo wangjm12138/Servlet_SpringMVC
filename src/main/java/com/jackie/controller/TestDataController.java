@@ -38,6 +38,9 @@ public class TestDataController {
 
     //自动参数赋值，如果不加@RequestParam会报错，可能需要再编译时候加入-parameter，这个问题待解决
     //如果参数类型转换失败也会报错
+    //@RequestParam既可以获取get请求，也可以获取post请求，但是请求的格式是x-www-form-urlencoding，也就是username=232&password=4242
+    //如果要支持json格式需要用@RequestBody
+    //
 
     @RequestMapping("getParametersByNoArg")
     public String getParameters2(@RequestParam("username") String username, @RequestParam("password") String password){
