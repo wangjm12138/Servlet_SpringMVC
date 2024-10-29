@@ -42,5 +42,5 @@
 <!--    静态资源放行-->
 <!--mapping就是url中的路径，location代表对应项目中哪个目录-->
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
-
+    <mvc:resources mapping="/upload/**" location="/upload/"></mvc:resources>
 </beans>

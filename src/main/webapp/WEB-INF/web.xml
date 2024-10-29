@@ -52,6 +52,15 @@
         </init-param>
 <!--        立刻初始化servlet-->
         <load-on-startup>1</load-on-startup>
+<!--        springmvc 6以上支持文件上传需要配置这个，如果是springmvc5则是需要再springmvc的xml里面配置commonsMultipartResolver-->
+        <multipart-config>
+<!--            &lt;!&ndash;设置单个支持最大文件的大小&ndash;&gt;-->
+<!--            <max-file-size>102400</max-file-size>-->
+<!--            &lt;!&ndash;设置整个表单所有文件上传的最大值&ndash;&gt;-->
+<!--            <max-request-size>102400</max-request-size>-->
+<!--            &lt;!&ndash;设置最小上传文件大小&ndash;&gt;-->
+<!--            <file-size-threshold>0</file-size-threshold>-->
+        </multipart-config>
     </servlet>
     
     <servlet-mapping>

@@ -3,6 +3,7 @@ package com.jackie.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 //requestmapping的多个参数
@@ -23,9 +24,12 @@ public class Mycontroller3 {
         return "three";
     }
 
-    //控制请求参数
+    //控制请求参数需要有username才允许
     @RequestMapping(value = "testRequest3",params ="username")
-    public String hello3() {
+    //public String hello3(@RequestParam("username")String username, @RequestParam("password") String password) {
+        public String hello3(String username, String password) {
+
+            System.out.println(username+":"+password);
         return "three";
     }
 

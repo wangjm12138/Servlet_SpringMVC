@@ -40,7 +40,7 @@ public class TestDataController {
     //如果参数类型转换失败也会报错
     //@RequestParam既可以获取get请求，也可以获取post请求，但是请求的格式是x-www-form-urlencoding，也就是username=232&password=4242
     //如果要支持json格式需要用@RequestBody
-    //
+    //补充一下，requestParam也会读取格式为multipart/form-data里面的参数，所以我严重怀疑它是和form表单对应的，form表单默认允许发什么，它就支持什么。
 
     @RequestMapping("getParametersByNoArg")
     public String getParameters2(@RequestParam("username") String username, @RequestParam("password") String password){
