@@ -5,9 +5,9 @@
 </head>
 <body>
 this is success page
-<%--<%--%>
-<%--    System.out.println("success.jsp ");--%>
-<%--%>--%>
+<%
+    System.out.println("success.jsp ");
+%>
 <%--${requestScope.msg}--%>
 </body>
 </html>

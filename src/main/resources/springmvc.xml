@@ -19,6 +19,8 @@
 
     
     <context:component-scan base-package="com.jackie.controller"></context:component-scan>
+<!--    异常处理第二种方式，设置全局异常-->
+<!--    <context:component-scan base-package="com.jackie.exceptionhandler"></context:component-scan>-->
 
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
@@ -38,9 +40,26 @@
 <!--        <property name="prefix" value="/WEB-INF/view/"></property>-->
         <property name="suffix" value=".jsp"></property>
     </bean>
+<!--第三种异常处理的方式，当然也可以用configuration的注解方式进行配置，config里面-->
+<!--    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                <prop key="java.lang.ArithmeticException">redirect:/Exception.jsp</prop>-->
+<!--                <prop key="java.lang.NullPointerException">redirect:/Exception.jsp</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
 
 <!--    静态资源放行-->
 <!--mapping就是url中的路径，location代表对应项目中哪个目录-->
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/upload/**" location="/upload/"></mvc:resources>
+<!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+<!--            这边要注意加斜杆/interceptor.action-->
+            <mvc:mapping path="/interceptor.action"/>
+            <bean class="com.jackie.controller.Interceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

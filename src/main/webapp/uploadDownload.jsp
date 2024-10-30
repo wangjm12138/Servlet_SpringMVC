@@ -25,11 +25,16 @@
             background-color: yellowgreen;
             transition: all .3s ease;
         }
+        #download {
+            cursor: not-allowed;
+        }
     </style>
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
         $(function(){
           $("#uploadFile").click(function(){
+              $("#download").css("cursor","not-allowed");
+
               var file = $("#photo")[0].files[0]
               if(typeof file === undefined){
                   alert("未选中文件")
@@ -49,7 +54,9 @@
                   success:function (result){
                       console.log(result)
                       // alert(result.message)
-                      $("#headImg").attr("src",result.url);
+                      $("#headImg").attr("src","upload/"+result.filename);
+                      $("#download").attr("href","download?file="+result.filename);
+                      $("#download").css("cursor","pointer");
                   },
                   xhr: function (){
                       var xhr = new XMLHttpRequest();
@@ -92,6 +99,7 @@
         <p>
             <input type="submit" value="注册">
         </p>
+        <a id="download" href="">下载图片</a>
     </form>
 </body>
 </html>
