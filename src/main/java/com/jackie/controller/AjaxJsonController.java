@@ -2,7 +2,6 @@ package com.jackie.controller;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jackie.POJO.Person2;
 import com.jackie.POJO.Pet;
 import org.springframework.stereotype.Controller;
@@ -11,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+//对应JackonTest.jsp
 @Controller
-public class AjaxController {
+public class AjaxJsonController {
 
     @ResponseBody
     @RequestMapping("testAjax")
