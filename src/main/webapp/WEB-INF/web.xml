@@ -18,6 +18,16 @@
 <!--        <url-pattern>/myServlet1</url-pattern>-->
 <!--    </servlet-mapping>-->
 
+    <servlet>
+        <servlet-name>AsyncServlet</servlet-name>
+        <servlet-class>com.jackie.controller.AsyncServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AsyncServlet</servlet-name>
+        <url-pattern>/async</url-pattern>
+    </servlet-mapping>
 <!--    <context-param>-->
 <!--        <param-name>username</param-name>-->
 <!--        <param-value>mashibing</param-value>-->
@@ -27,6 +37,8 @@
 <!--        <param-name>password</param-name>-->
 <!--        <param-value>123456</param-value>-->
 <!--    </context-param>-->
+
+
 <!--    spring mvc练习-->
     <!--向ServletContext中添加spring核心配置文件的位置-->
     <context-param>
